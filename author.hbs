@@ -1,0 +1,51 @@
+{{!< default}}
+{{#author}}
+{{#if cover}}
+<div class="tag-cover" style="background-image: url({{cover}})">
+			<div class="tagdescr withimg">
+				<div class="row">
+					<div class="col-sm-12">
+						{{#if image}}
+						<div class="authorimg"><img src="{{image}}" alt="{{name}}"/></div>
+						{{/if}}
+	  <h1 class="text-center">{{name}}</h1>
+		</div>
+		</div>
+	</div>
+	</div>
+
+{{else}}
+<div class="tag-header">
+<div class="row">
+	<div class="col-sm-12">
+	<div class="tag-frame">
+
+	<div class="row no-gutter">
+	<div class="col-xs-1">
+<div class="frame"><i class="fa fa-user"></i></div>
+	</div>
+	<div class="col-xs-11">
+		<div class="tagdescr">
+  <h1>{{name}}</h1>
+	</div>
+	</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+{{/if}}
+{{/author}}
+
+<div class="articles-container">
+	<div class="row">
+		<div class="col-sm-12">
+			{{> "loop"}}
+			<div class="clearance"></div>
+			{{! Previous/next page links - displayed on every page }}
+			{{pagination}}
+		</div>
+
+	</div>
+</div>

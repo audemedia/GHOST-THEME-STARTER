@@ -1,0 +1,25 @@
+<!-- AUTHOR BOX -->
+{{#if author}}
+{{#author}}
+<div class="author-wrap">
+<div class="row">
+{{#if image}}
+<div class="col-sm-2">
+<div class="authorimg"><img src="{{image}}" alt="{{name}}"/></div>
+</div>
+{{/if}}
+
+<div {{#if image}}class="col-sm-10"{{else}}class="col-sm-12"{{/if}}>
+<h5>{{name}} {{#if website}}<span>- <a href="{{website}}" target="_blank">{{website}}</a></span>{{/if}}</h5>
+{{#if bio}}
+<p>{{bio}}</p>
+{{/if}}
+<div class="author-all-posts">
+	<a href="{{url}}">ALL POSTS BY {{name}}</a>
+</div>
+</div>
+
+</div>
+</div>
+{{/author}}
+{{/if}}

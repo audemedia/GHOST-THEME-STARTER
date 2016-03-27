@@ -1,0 +1,49 @@
+{{#is "home"}}
+<!-- SLIDER -->
+<div class="row">
+ <div class="col-sm-12">
+<div class="slider-frame">
+
+<div id="hw-hero">
+
+<div id="hw-the-slider" class="owl-carousel">
+
+	{{#foreach posts}}
+  {{#if featured}}
+
+<!-- SLIDER ITEM -->
+{{#if image}}
+      <div class="item">
+				<div class="featimg"  style="background-image: url({{image}})">
+
+        <div class="hw-the-slider-content">
+          <div class="hw-the-slider-container">
+            <div class="hw-the-slider-captions">
+              <h2><a href="{{url}}">{{title}}</a></h2>
+              <p>{{excerpt words="50"}}...</p>
+        </div>
+        </div>
+			</div>
+
+			<div class="meta">
+				{{#if tags}}
+				<span class="tag">{{tags separator=" "}}</span>
+				 {{/if}}
+				<span class="date"><i class="fa fa-clock-o"></i> {{date published_at timeago="true"}}</span> <span class="disqus"><i class="fa fa-comments"></i> <a href="{{url}}#disqus_thread">comments</a></span>
+				</div>
+
+			</div>
+		</div>
+			{{/if}}
+<!-- END OF SLIDER ITEM -->
+
+{{/if}}
+{{/foreach}}
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- END OF SLIDER -->
+{{/is}}

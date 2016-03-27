@@ -1,0 +1,57 @@
+
+<div
+{{#if image}}
+class="single-post-img" style="background-image: url({{image}})"
+{{else}}
+class="single-post-img noimg"
+{{/if}}
+>
+	<div class="single-post-title">
+ 	 <span class="date single"><i class="fa fa-clock-o"></i> {{date published_at timeago="true"}}</span>
+ 	 <h1 class="post-title">{{{title}}}</h1>
+ 	<span class="disqus single"><i class="fa fa-comments"></i> <a href="#disqus_thread">comments</a></span>
+  </div>
+</div>
+
+	{{> "share-buttons"}}
+
+<div class="articles-container single">
+	<div class="row">
+		<div class="col-sm-12">
+
+<div class="block-grid-xs-1">
+			<div class="block-grid-item">
+
+				<article class="{{post_class}} single">
+
+					<div class="article-content single">
+						<div class="post-excerpt">
+						{{content}}
+
+							{{#if tags}}
+							<div class="post-tags">
+								<span class="tag">{{tags separator=" "}}</span>
+							</div>
+							 {{/if}}
+
+						</div>
+					</div>
+
+				</article>
+
+			</div>
+</div>
+<div class="clearance"></div>
+
+<!-- AUTHOR BOX-->
+{{> author-box}}
+
+<!-- COMMENTS -->
+{{> comments}}
+
+</div>
+</div>
+</div>
+
+<!-- NEXT POST -->
+{{> next-post}}

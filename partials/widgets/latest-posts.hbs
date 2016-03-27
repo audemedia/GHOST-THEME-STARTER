@@ -1,0 +1,9 @@
+<h4>LATEST POSTS</h4>
+{{#get "posts" limit="3"}}
+	<ul class="allposts">
+		{{#foreach posts}}
+			<li><a href="{{url}}">{{title}}</a>
+			<span class="date"><i class="fa fa-clock-o"></i> {{date published_at timeago="true"}}</span></li>
+		{{/foreach}}
+	</ul>
+{{/get}}

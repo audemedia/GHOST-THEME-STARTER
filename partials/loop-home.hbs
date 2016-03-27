@@ -1,0 +1,33 @@
+<div class="block-grid-md-3 block-grid-sm-2 block-grid-xs-1  postscontainer">
+	{{#foreach posts}}
+		{{#unless featured}}
+			<div class="block-grid-item">
+
+				<article {{#if image}} class="{{post_class}}" {{else}} class="{{post_class}} noimage" {{/if}}>
+
+					{{#if image}}
+						<div class="post-img">
+							<img src="{{image}}" alt=""/>
+						</div>
+					{{/if}}
+
+					<div class="article-content">
+
+						<header class="post-header">
+							<h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+							<span class="date"><i class="fa fa-clock-o"></i> {{date published_at timeago="true"}}</span>,
+							<span class="disqus"><i class="fa fa-comments"></i> <a href="{{url}}#disqus_thread">comments</a></span>
+						</header>
+
+						<div class="post-excerpt">
+							<p>{{excerpt words="35"}}...</p>
+						</div>
+
+						<span class="tags">{{tags separator=" "}}</span>
+					</div>
+
+				</article>
+			</div>
+		{{/unless}}
+	{{/foreach}}
+</div>

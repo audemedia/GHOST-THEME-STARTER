@@ -1,0 +1,49 @@
+
+<div
+{{#if image}}
+class="single-post-img" style="background-image: url({{image}})"
+{{else}}
+class="single-post-img page noimg"
+{{/if}}
+>
+	<div class="single-post-title">
+ 	 <h1 class="post-title">{{{title}}}</h1>
+  </div>
+</div>
+
+	{{> "share-buttons"}}
+
+<div class="articles-container single">
+	<div class="row">
+		<div class="col-sm-12">
+
+<div class="block-grid-xs-1">
+			<div class="block-grid-item">
+
+				<article class="{{post_class}} single">
+
+					<div class="article-content single">
+						<div class="post-excerpt">
+							<p>{{content}}</p>
+
+							{{#if tags}}
+							<div class="post-tags">
+								<span class="tag">{{tags separator=" "}}</span>
+							</div>
+							 {{/if}}
+
+						</div>
+					</div>
+
+				</article>
+
+			</div>
+</div>
+<div class="clearance"></div>
+
+</div>
+</div>
+</div>
+
+<div class="spacing-35">
+</div>

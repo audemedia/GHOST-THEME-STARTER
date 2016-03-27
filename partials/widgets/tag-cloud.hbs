@@ -1,0 +1,8 @@
+<h4>TAGS</h4>
+{{#get "tags" limit="all" include="count.posts" order="count.posts desc" }}
+	<ul class="alltags">
+		{{#foreach tags}}
+			<li><a href="/tag/{{slug}}">{{name}}</a></li>
+		{{/foreach}}
+	</ul>
+{{/get}}

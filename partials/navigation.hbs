@@ -1,0 +1,12 @@
+  <div class="row">
+    <div class="col-sm-12">
+			<div class="navigation">
+      <ul id="main-nav">
+        {{#foreach navigation}}
+      <li class="nav-{{slug}}{{#if current}} current-menu-item{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
+      {{/foreach}}
+        <li id="showtopbar"><i class="fa fa-bars"></i></li>
+      </ul>
+    </div>
+  </div>
+</div>

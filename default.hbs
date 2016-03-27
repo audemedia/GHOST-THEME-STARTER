@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	{{! Document Settings }}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	 {{! Page Meta }}
+	<title>{{meta_title}}</title>
+	<meta name="description" content="{{meta_description}}" />
+	<link rel="shortcut icon" href="{{asset "images/favicon.png"}}">
+
+	{{! Styles'n'Scripts }}
+	<link rel="stylesheet" href="{{asset "css/bootstrap.min.css"}}">
+	<link rel="stylesheet" href="{{asset "css/bootstrap-theme.min.css"}}">
+	<link rel="stylesheet" href="{{asset "css/block_grid_bootstrap.css"}}">
+	<link rel="stylesheet" href="{{asset "css/font-awesome.min.css"}}">
+	<link rel="stylesheet" href="{{asset "css/owl.carousel.css"}}">
+	<link rel="stylesheet" href="{{asset "css/owl.theme.css"}}">
+	<link rel="stylesheet" href="{{asset "css/justifiedGallery.min.css"}}">
+	<link rel="stylesheet" href="{{asset "css/magnific-popup.css"}}">
+	<link rel="stylesheet" href="{{asset "css/slicknav.min.css"}}">
+	<link rel="stylesheet" href="{{asset "css/main.css"}}">
+	<link rel="stylesheet" href="{{asset "css/dark-theme.css"}}">
+
+	{{! Google Fonts }}
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,700,900&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+	{{! Ghost outputs important style and meta data with this tag }}
+	{{ghost_head}}
+</head>
+
+<body class="{{body_class}}">
+
+	<!-- HEADER -->
+
+	{{> "topbar"}}
+
+	<div class="header" {{#if @blog.cover}} style="background-image: url({{@blog.cover}}); background-size:cover;" {{/if}}>
+		<div class="row">
+			<div class="col-sm-3">
+				{{#if @blog.logo}}
+				<div class="logo image">
+					<a href="{{@blog.url}}">
+						<img src="{{@blog.logo}}" alt="{{@blog.title}}" />
+					</a>
+				</div>
+				{{else}}
+				<div class="logo">
+					<h1><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+				</div>
+				{{/if}} {{#if @blog.description}}
+				<p class="motto">{{@blog.description}}</p>
+				{{/if}}
+			</div>
+			<div class="col-sm-9">
+			{{> "social-icons"}}
+			</div>
+		</div>
+
+		{{! Navigation Menu }} {{navigation}}
+
+	</div>
+
+	<!-- END OF HEADER -->
+
+	{{> "home-featured-posts"}}
+
+	{{! Everything else gets inserted here }}
+
+	{{{body}}}
+
+	{{> "footer"}}
+
+	{{! Ghost outputs important scripts and data with this tag }}
+
+	{{ghost_foot}}
+
+	<script type="text/javascript">
+  if (typeof jQuery == 'undefined') {
+    document.write('<script type="text/javascript" src="{{asset "js/jquery.min.js"}}"></'+'script>');
+  }
+</script>
+	<script type="text/javascript" src="{{asset "js/bootstrap.min.js"}}"></script>
+	<script type="text/javascript" src="{{asset "js/jquery.slicknav.min.js"}}"></script>
+	<script type="text/javascript" src="{{asset "js/owl.carousel.min.js"}}"></script>
+	<script type="text/javascript" src="{{asset "js/masonry.pkgd.min.js"}}"></script>
+	<script type="text/javascript" src="{{asset "js/jquery.justifiedGallery.min.js"}}"></script>
+	<script type="text/javascript" src="{{asset "js/jquery.magnific-popup.min.js"}}"></script>
+	<script type="text/javascript" src="{{asset "js/retina.min.js"}}"></script>
+
+	{{! The main JavaScript file }}
+	<script type="text/javascript" src="{{asset "js/custom.js"}}"></script>
+
+	<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'zerple'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function () {
+var s = document.createElement('script'); s.async = true;
+s.type = 'text/javascript';
+s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+</body>
+
+</html>

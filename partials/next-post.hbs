@@ -1,0 +1,15 @@
+<!-- NEXT POST -->
+<div class="prevnext">
+<div class="row full-width no-gutter">
+{{#prev_post}}
+ <div class="next">
+<div {{#if image}}class="prevnextimg" style="background-image: url({{image}})"{{else}}class="prevnextimg noimg"{{/if}}>
+<div class="prevnextin">
+<h6>NEXT POST</h6>
+<a href="{{url}}"><p>{{title}}</p></a>
+</div>
+</div>
+</div>
+{{/prev_post}}
+</div>
+</div>
